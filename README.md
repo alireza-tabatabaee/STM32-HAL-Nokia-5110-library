@@ -1,8 +1,8 @@
 # STM32 HAL Nokia 5110 library (SPI)
 
-This is a port of [Tilen Majerle's Nokia 3310/5110 LCD library](https://stm32f4-discovery.net/pcd8544-nokia-33105110-lcd-stm32f429-discovery-library/), which can be used with the STM32 HAL functions, and STM32CubeMX's auto-generated code. 
+This is a port of [Tilen Majerle's Nokia 3310/5110 LCD library](https://stm32f4-discovery.net/pcd8544-nokia-33105110-lcd-stm32f429-discovery-library/), which can be used with the STM32 HAL functions and STM32CubeMX's auto-generated code. 
 
-The biggest advantage of this SPI-based library compared to Adafruit's more common GPIO-based library, is the noticeably higher speed.
+The biggest advantage of this SPI-based library compared to Adafruit's more famous GPIO-based library is its noticeably higher speed.
 
 ## How to use
 
@@ -13,7 +13,7 @@ After setting up SPI and three GPIO_Output pins, go to "stm32f4_pcd8544.h" and e
 ```c
 //SPI used
 extern SPI_HandleTypeDef hspi3;
-#define PCD8544_SPI				hspi3
+#define PCD8544_SPI         hspi3
 
 //Default pins used
 //Default RST pin
