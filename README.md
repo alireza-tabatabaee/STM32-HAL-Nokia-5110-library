@@ -2,18 +2,18 @@
 
 This is a port of [Tilen Majerle's Nokia 3310/5110 LCD library](https://stm32f4-discovery.net/pcd8544-nokia-33105110-lcd-stm32f429-discovery-library/), which can be used with the STM32 HAL functions and STM32CubeMX's auto-generated code. 
 
-The biggest advantage of this SPI-based library compared to Adafruit's more famous GPIO-based library is its noticeably higher speed.
+The biggest advantage of this SPI-based library compared to Adafruit's more famous GPIO-based library, is its noticeably higher speed.
 
 ## How to use
 
-Settings in STM32CubeMX: Activate an SPI, set the mode to "Transmit only Master" (since we don't need to recieve anything from the LCD) and set the data size to "8 bits". Then activate three GPIO_Output pins for the reset, DC and CE pins of the LCD.
+**Settings in STM32CubeMX:** Activate an SPI, set the mode to "Transmit only Master" (since we don't need to recieve anything from the LCD), and set the data size to "8 bits". Then activate three GPIO_Output pins for the reset, DC and CE pins of the LCD.
 
-After setting up SPI and three GPIO_Output pins, go to "stm32f4_pcd8544.h" and edit these lines on top of the file with the handler of your SPI, and the three GPIO pins that you set up for the reset, DC and CE pins of the LCD. In the original files I have set up hspi3, and D7, D5 and D3 pins as GPIO.
+After setting up SPI and three GPIO_Output pins, go to the "stm32f4_pcd8544.h" file and edit these lines on top of the file with the handle struct of your SPI, and the three GPIO pins that you have set up for the reset, DC and CE pins of the LCD. In the original files and the example below I have set up hspi3 as SPI handle, and the D7, D5 and D3 pins as the GPIO pins.
 
 ```c
 //SPI used
-extern SPI_HandleTypeDef hspi3;
-#define PCD8544_SPI         hspi3
+extern SPI_HandleTypeDef        hspi3;
+#define PCD8544_SPI             hspi3
 
 //Default pins used
 //Default RST pin
